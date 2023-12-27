@@ -15,7 +15,7 @@ const Chat = ({ socket, username, room }) => {
       username: username,
       message: message,
       room: room,
-      date: new Date(Date.now).getHours() - new Date(Date.now).getMinutes(),
+      date: new Date().getHours() + ":" + new Date().getMinutes(),
     };
 
     await socket.emit("message", messageContent);
